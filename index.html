@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div class="explain">Exercises - Press SPACE or click on number below to start.</div>
+    <div id="counter">0</div>
+    <div id="timer">00:00:00</div>
+
+    <div class="list" id="list">
+      <div class="item localItem" id="localItem">
+        <div class="content">
+          <div class="timerBoth">
+            <div class="timerSaved running" id="local">00:00:00</div>
+            <div class="line bg-running"></div>
+            <div class="timerSavedTotal rest" id="littleTimer">00:00:00</div>
+          </div>
+          <div class="type running" id="doOrTakeABreath">Do it!</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
+
+<!--
+  <div class="item">
+        <div class="content">
+          <div class="timerBoth">
+            <div class="timerSaved rest">00:00:07</div>
+            <div class="line bg-rest"></div>
+            <div class="timerSavedTotal rest" id="timerTotalSaved">00:00:07</div>
+          </div>
+          <div class="type rest">Exercice</div>
+        </div>
+      </div>
+-->
