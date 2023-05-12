@@ -12,6 +12,7 @@ const list = document.getElementById("list")
 const localTimer = document.getElementById("local")
 const localItem = document.getElementById("localItem")
 const doOrTakeABreath = document.getElementById("doOrTakeABreath")
+const doOrTakeABreathTotal = document.getElementById("doOrTakeABreathTotal")
 
 var timerValue = "00:00:00"
 var timerLocalValue = "00:00:00"
@@ -49,6 +50,7 @@ function listClock(restart = false) {
   }
   timerLocalValue = getTime(localSeconds)
   localTimer.innerHTML = timerLocalValue
+  localLittleTimer.innerHTML = timerLocalValue
 }
 
 interval = setInterval(() => {
@@ -66,6 +68,10 @@ function countDown() {
   if (!start) {
     start = true
     localItem.style.visibility = "visible"
+  }
+
+  if (doOrTakeABreathTotal.innerHTML === "Let's go!") {
+    doOrTakeABreathTotal.innerHTML = "Do it!"
   }
 
   if (timerValue === "00:00:00") return
@@ -98,6 +104,7 @@ function countDown() {
   list.appendChild(item)
   isExercise = !isExercise
   doOrTakeABreath.innerHTML = isExercise ? "Do it" : "Take a Breath"
+  doOrTakeABreathTotal.innerHTML = isExercise ? "Do it" : "Take a Breath"
 
 
   if (!isExercise) {
@@ -113,6 +120,8 @@ function closeRunning() {
   start = false
   stop = true
   localItem.style.visibility = "hidden"
+  localLittleTimer.style.display = "none"
+  doOrTakeABreathTotal.style.display = "none"
   runningNumber(false)
 }
 
